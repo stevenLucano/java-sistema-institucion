@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://WebService/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://WebService/">
+
+<xs:element name="actualizarAsignatura" type="tns:actualizarAsignatura"/>
+
+<xs:element name="actualizarAsignaturaResponse" type="tns:actualizarAsignaturaResponse"/>
+
+<xs:element name="actualizarEstudiante" type="tns:actualizarEstudiante"/>
+
+<xs:element name="actualizarEstudianteResponse" type="tns:actualizarEstudianteResponse"/>
+
+<xs:element name="agregarAsignatura" type="tns:agregarAsignatura"/>
+
+<xs:element name="agregarAsignaturaResponse" type="tns:agregarAsignaturaResponse"/>
+
+<xs:element name="agregarEstudiante" type="tns:agregarEstudiante"/>
+
+<xs:element name="agregarEstudianteResponse" type="tns:agregarEstudianteResponse"/>
+
+<xs:element name="buscarAsignatura" type="tns:buscarAsignatura"/>
+
+<xs:element name="buscarAsignaturaResponse" type="tns:buscarAsignaturaResponse"/>
+
+<xs:element name="buscarEstudiante" type="tns:buscarEstudiante"/>
+
+<xs:element name="buscarEstudianteResponse" type="tns:buscarEstudianteResponse"/>
+
+<xs:element name="cambioAsignaturas" type="tns:cambioAsignaturas"/>
+
+<xs:element name="cambioAsignaturasResponse" type="tns:cambioAsignaturasResponse"/>
+
+<xs:element name="eliminarAsignatura" type="tns:eliminarAsignatura"/>
+
+<xs:element name="eliminarAsignaturaResponse" type="tns:eliminarAsignaturaResponse"/>
+
+<xs:element name="eliminarEstudiante" type="tns:eliminarEstudiante"/>
+
+<xs:element name="eliminarEstudianteResponse" type="tns:eliminarEstudianteResponse"/>
+
+<xs:element name="listarAsignaturas" type="tns:listarAsignaturas"/>
+
+<xs:element name="listarAsignaturasResponse" type="tns:listarAsignaturasResponse"/>
+
+<xs:element name="listarEstudiantes" type="tns:listarEstudiantes"/>
+
+<xs:element name="listarEstudiantesResponse" type="tns:listarEstudiantesResponse"/>
+
+<xs:element name="verAsignaturas" type="tns:verAsignaturas"/>
+
+<xs:element name="verAsignaturasResponse" type="tns:verAsignaturasResponse"/>
+
+<xs:element name="verEstudiantes" type="tns:verEstudiantes"/>
+
+<xs:element name="verEstudiantesResponse" type="tns:verEstudiantesResponse"/>
+
+<xs:complexType name="listarAsignaturas">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listarAsignaturasResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:asignatura" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="asignatura">
+<xs:sequence>
+<xs:element name="creditos" type="xs:int"/>
+<xs:element name="idAsignatura" type="xs:int"/>
+<xs:element name="matriculados" type="xs:int"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="verEstudiantes">
+<xs:sequence>
+<xs:element name="idAsg" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="verEstudiantesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:estudiante" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="estudiante">
+<xs:sequence>
+<xs:element name="carrera" type="xs:string" minOccurs="0"/>
+<xs:element name="celular" type="xs:string" minOccurs="0"/>
+<xs:element name="idEstudiante" type="xs:int"/>
+<xs:element name="identificacion" type="xs:string" minOccurs="0"/>
+<xs:element name="nacimiento" type="xs:string" minOccurs="0"/>
+<xs:element name="nombres" type="xs:string" minOccurs="0"/>
+<xs:element name="pApellido" type="xs:string" minOccurs="0"/>
+<xs:element name="sApellido" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarEstudiante">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="ident" type="xs:string" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+<xs:element name="pApe" type="xs:string" minOccurs="0"/>
+<xs:element name="sApe" type="xs:string" minOccurs="0"/>
+<xs:element name="nac" type="xs:string" minOccurs="0"/>
+<xs:element name="cel" type="xs:string" minOccurs="0"/>
+<xs:element name="carr" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarEstudianteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarAsignatura">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+<xs:element name="cred" type="xs:int"/>
+<xs:element name="matri" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarAsignaturaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarEstudiante">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarEstudianteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarAsignatura">
+<xs:sequence>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+<xs:element name="cred" type="xs:int"/>
+<xs:element name="matri" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarAsignaturaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarEstudiante">
+<xs:sequence>
+<xs:element name="ident" type="xs:string" minOccurs="0"/>
+<xs:element name="nom" type="xs:string" minOccurs="0"/>
+<xs:element name="pApe" type="xs:string" minOccurs="0"/>
+<xs:element name="sApe" type="xs:string" minOccurs="0"/>
+<xs:element name="nac" type="xs:string" minOccurs="0"/>
+<xs:element name="cel" type="xs:string" minOccurs="0"/>
+<xs:element name="carr" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="agregarEstudianteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarEstudiantes">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listarEstudiantesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:estudiante" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarEstudiante">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="ident" type="xs:int"/>
+<xs:element name="p_ape" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarEstudianteResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:estudiante" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarAsignatura">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarAsignaturaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:asignatura" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarAsignatura">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarAsignaturaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cambioAsignaturas">
+<xs:sequence>
+<xs:element name="idEst" type="xs:int"/>
+<xs:element name="idAsg" type="xs:int"/>
+<xs:element name="acc" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cambioAsignaturasResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="verAsignaturas">
+<xs:sequence>
+<xs:element name="idEst" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="verAsignaturasResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:asignatura" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
